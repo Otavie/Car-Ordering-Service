@@ -1,6 +1,6 @@
 # Car Ordering Service Backend
 
-This is the backend portion of the Car Ordering Service project. It provides the necessary server-side functionality to handle order requests, driver interactions, and maintain order/event history.
+This is the backend portion of the Car Ordering Service project. It provides the necessary server-side functionality to handle order requests, driver interactions, and maintain order/event history. In this implementation, we're using TypeScript for type safety, Node.js for server-side logic, and Express for handling HTTP requests. We also use UUID package for generating unique identifiers. The backend provides endpoints for creating senders and drivers, making order requests, accepting/rejecting orders, and retrieving order/event history. Additionally, it includes logic to handle order expiration, driver availability, and notification to senders.
 
 ## Getting Started
 
