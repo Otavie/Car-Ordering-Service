@@ -5,6 +5,10 @@ import DriverModel from '../models/DriverModel'
 export const router: Router = Router()
 
 router.post('/', async (req: Request, res: Response) => {
+    // #swagger.tags = ['Order']
+    // #swagger.summary = 'Create a New Order'
+    // #swagger.description = 'Endpoint to create a new order request. Upon successful creation, the order is initially set to pending status. After 1 minute, if not accepted by a driver, it will be automatically rejected.'
+
     try {
         const { location, destination, price, senderId } = req.body
         const newOrder = new OrderModel({
@@ -44,6 +48,10 @@ const notifySender = (orderId: string, evenType: string) => {
 
 // Endpoint for driver to accept an order
 router.post('/:orderId/accept', async (req: Request, res: Response) => {
+    // #swagger.tags = ['Order/{orderId}/accept']
+    // #swagger.summary = 'Accept Order'
+    // #swagger.description = 'Endpoint for a driver to accept an order. Upon successful acceptance, the order status will be updated to accepted.'
+    
     try {
         const { orderId } = req.params
         const { driverId } = req.body

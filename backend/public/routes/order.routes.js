@@ -18,6 +18,9 @@ const OrderModel_1 = __importDefault(require("../models/OrderModel"));
 const DriverModel_1 = __importDefault(require("../models/DriverModel"));
 exports.router = (0, express_1.Router)();
 exports.router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // #swagger.tags = ['Order']
+    // #swagger.summary = 'Create a New Order'
+    // #swagger.description = 'Endpoint to create a new order request. Upon successful creation, the order is initially set to pending status. After 1 minute, if not accepted by a driver, it will be automatically rejected.'
     try {
         const { location, destination, price, senderId } = req.body;
         const newOrder = new OrderModel_1.default({
@@ -50,6 +53,9 @@ const notifySender = (orderId, evenType) => {
 };
 // Endpoint for driver to accept an order
 exports.router.post('/:orderId/accept', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // #swagger.tags = ['Order/{orderId}/accept']
+    // #swagger.summary = 'Accept Order'
+    // #swagger.description = 'Endpoint for a driver to accept an order. Upon successful acceptance, the order status will be updated to accepted.'
     try {
         const { orderId } = req.params;
         const { driverId } = req.body;

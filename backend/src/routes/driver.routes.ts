@@ -5,6 +5,10 @@ export const router: Router = Router()
 
 // Endpoint to create a new driver 
 router.post('/', async (req: Request, res: Response) => {
+    // #swagger.tags = ['Driver']
+    // #swagger.summary = 'Create a New Driver'
+    // #swagger.description = 'Endpoint to create a new driver. Upon creation, the driver is marked as available.'
+    
     try {
         const newDriver = new DriverModel({ isAvailable: true })
         await newDriver.save()

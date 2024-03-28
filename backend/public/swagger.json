@@ -1,0 +1,162 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "v1.0.0",
+    "title": "Car Ordering Service Backend",
+    "description": "Backend API documentation for the Car Ordering Service project.",
+    "contact": {
+      "name": "Otavie Okuoyo",
+      "email": "otavieokuoyo@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5468",
+      "description": "Local development server"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Order": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "object"
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "The current location where the order originates from."
+                  }
+                }
+              },
+              "destination": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "The desired destination (address, landmark) of the car ride."
+                  }
+                }
+              },
+              "price": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "number"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "The price of the order, usually in the currency specified by the system."
+                  }
+                }
+              },
+              "senderId": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "The unique identifier of the sender who placed the order."
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Sender": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "object"
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Name of the sender"
+                  }
+                }
+              },
+              "email": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Email of the sender."
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Driver": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "object"
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "isAvailable": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "boolean"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Indicates whether the driver is available."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

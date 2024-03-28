@@ -18,6 +18,9 @@ const DriverModel_1 = __importDefault(require("../models/DriverModel"));
 exports.router = (0, express_1.Router)();
 // Endpoint to create a new driver 
 exports.router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // #swagger.tags = ['Driver']
+    // #swagger.summary = 'Create a New Driver'
+    // #swagger.description = 'Endpoint to create a new driver. Upon creation, the driver is marked as available.'
     try {
         const newDriver = new DriverModel_1.default({ isAvailable: true });
         yield newDriver.save();

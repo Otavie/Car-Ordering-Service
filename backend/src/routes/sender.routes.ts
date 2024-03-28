@@ -5,6 +5,10 @@ export const router: Router = Router()
 
 // Endpoint to create a new sender
 router.post('/', async (req: Request, res: Response) => {
+    // #swagger.tags = ['Sender']
+    // #swagger.summary = 'Create a New Sender'
+    // #swagger.description = 'Endpoint to create a new sender. It requires the sender's name and email.'
+    
     try {
         const { name, email } = req.body
         const newSender = new SenderModel({ name, email })

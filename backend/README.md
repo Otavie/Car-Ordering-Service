@@ -12,7 +12,7 @@ To run the backend server locally, follow these steps:
 4. Install dependencies by running `npm install`.
 5. Start the server by running `npm start`.
 
-The server should now be running on http://localhost:3000 by default.
+The server should now be running on http://localhost:5468 by default.
 
 ## Endpoints
 

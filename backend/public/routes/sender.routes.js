@@ -18,6 +18,9 @@ const SenderModel_1 = __importDefault(require("../models/SenderModel"));
 exports.router = (0, express_1.Router)();
 // Endpoint to create a new sender
 exports.router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // #swagger.tags = ['Sender']
+    // #swagger.summary = 'Create a New Sender'
+    // #swagger.description = 'Endpoint to create a new sender. It requires the sender's name and email.'
     try {
         const { name, email } = req.body;
         const newSender = new SenderModel_1.default({ name, email });
